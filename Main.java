@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("=== MENU PRINCIPAL : Analyseur Lexical + Syntaxique ===");
-        System.out.println("Options : (L)exical   (S)yntaxique   (B)oth   (Q)uitter");
+        System.out.println("Options : (L)exical   (S)yntaxique   (B)oth ");
 
         while (true) {
             System.out.print("\nChoix > ");
@@ -21,7 +21,7 @@ public class Main {
                 case 'L':
 
                     System.out.println("\n--- MODE LEXICAL ---");
-                    System.out.println("Tapez votre code (ou tapez 'STOP' pour revenir au menu) :");
+                    System.out.println("Tapez votre code :");
                     while (true) {
                         System.out.print("\nCode > ");
                         String ligne = sc.nextLine();
@@ -43,7 +43,7 @@ public class Main {
                 case 'S':
          
                     System.out.println("\n--- MODE SYNTAXIQUE ---");
-                    System.out.println("Tapez votre code (ou tapez 'STOP' pour revenir au menu) :");
+                    System.out.println("Tapez votre code:");
                     while (true) {
                         System.out.print("\nCode > ");
                         String code = sc.nextLine();
@@ -56,14 +56,14 @@ public class Main {
 
                 case 'B':
 
-                    System.out.println("\n--- MODE COMBINÉ : Lexical puis Syntaxique ---");
+                    System.out.println("\n--- MODE COMBINÉ : Lexical + Syntaxique ---");
                     System.out.println("Tapez votre code (ou tapez 'STOP' pour revenir au menu) :");
                     while (true) {
                         System.out.print("\nCode > ");
                         String ligne = sc.nextLine();
                         if (ligne.equalsIgnoreCase("STOP")) break;
 
-                        System.out.println("\n[Etape 1] - Analyse lexicale (tokens) :");
+                        System.out.println("\n[Etape 1] - Analyse lexicale :");
                         String mot = ligne + '#';
                         AnalyseurLexical AL = new AnalyseurLexical(mot);
                         String token = "";
@@ -81,8 +81,9 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Option invalide. Choisissez L, S, B ou Q.");
+                    System.out.println("Option invalide. Choisissez L, S, B.");
             }
         }
     }
+
 }
