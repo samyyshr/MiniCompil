@@ -136,7 +136,6 @@ public class AnalyseurLexical {
         return "fin";
     }
 
-    // 1. Ignorer les espaces blancs
     while (!fin() && estespace(TC)) {
         caracteresuivant();
     }
@@ -146,13 +145,11 @@ public class AnalyseurLexical {
         return "fin";
     }
 
-    // 👉 AJOUT : stopper proprement sur #
     if (TC == '#') {
         fin = true;
         return "fin";
     }
 
-    // AJOUT : Gestion des commentaires (//)
     if (TC == '/') {
         if (position + 1 < mot.length() && mot.charAt(position + 1) == '/') {
             while (!fin() && TC != '\n') {
@@ -335,5 +332,6 @@ public static void main(String[] args) {
             }
         }
     }
+
 
     }
