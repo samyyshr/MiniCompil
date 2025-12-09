@@ -26,7 +26,7 @@ public class AnalyseurSyntaxique {
     public void Z() {
         ok = true;
         I();
-        if (ok && token.equals("fin") || token.contains("")) {
+        if (ok && token.equals("fin") ) {
             System.out.println("chaine acceptee");
         } else {
             System.out.println("chaine non acceptee");
@@ -148,3 +148,4 @@ public class AnalyseurSyntaxique {
         }
     }
 }
+
